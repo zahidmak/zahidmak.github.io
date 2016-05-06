@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Zahidali - Software Developer</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-57121421-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--   <a class="navbar-brand" href="#">Start Bootstrap</a> -->
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Portfolio</a>
+                    </li> -->
+                    <li>
+                        <a href="/portfolio.html"><i class="fa fa-user"></i> Portfolio</a>
+
+                    </li>
+                    <li>
+
+                        <a href="mailto:zahid2304@gmail.com"><i class="fa fa-envelope"></i> Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    
+      <div class="container">
+          
+           <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+<script src="jscolor.min.js"></script></script>
+<div>
+<input type="text" class="jscolor" id="color1" onchange="createGradient();"/>
+<input type="text" class="jscolor" id="color2" onchange="createGradient();"/>
+    <select id="angle" onchange="createGradient();">
+    <option  value="45deg">Bottom left to top right</option>
+        <option  value="180deg">Vertical down</option>
+        <option  value="360deg">Vertical up</option>
+        <option  value="90deg">Left to right</option>
+        <option  value="-45deg">Bottom right to top left</option>
+        
+    
+    </select>
+</div>
+<style>
+    #test{
+        
+        min-height: 400px;
+        width: 400px;
+    }
+</style>
+<div id="test">
+
+
+</div>
+
+
+<script>
+var makeGradientStyle = function(){
+    var gradientString = '\
+        /* Mozilla Firefox */ \
+        background-image: -moz-linear-gradient({angle}, {colour1} 0%, {colour2} 100%);\
+        /* Opera */ \
+        background-image: -o-linear-gradient({angle}, {colour1} 0%, {colour2} 100%);\
+        /* Webkit (Chrome 11+) */ \
+        background-image: -webkit-linear-gradient({angle}}, {colour1} 0%, {colour2} 100%);\
+        /* IE10+ */\
+        background: -ms-linear-gradient({angle},  {colour1} 0%,{colour2} 100%);\
+        /* W3C */\
+        background: linear-gradient({angle},  {colour1} 0%,{colour2} 100%);\
+    ';
+    
+    return function(colour1, colour2,angle){
+        return gradientString.replace(/\{colour1\}/g, colour1).replace(/\{colour2\}/g, colour2).replace(/\{angle\}/g, angle)
+    }
+}();
+    
+    function createGradient(){
+        $('#test').attr('style', makeGradientStyle(("#" + $("#color1").val()),("#" + $("#color2").val()), $("#angle").val()));
+        
+    }
+                        
+    
+    
+</script>
+
+          
+          </div>
+</body>
+    
